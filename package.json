@@ -1,0 +1,29 @@
+{
+  "name": "google-books-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattjavier/google-books-search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattjavier/google-books-search/issues"
+  },
+  "homepage": "https://github.com/mattjavier/google-books-search#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.10.6"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
