@@ -4,6 +4,7 @@ import API from '../../utils/API'
 import BookContext from '../../utils/BookContext'
 import SavedBook from '../../components/SavedBook'
 import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   title: {
@@ -27,7 +28,7 @@ const Saved = () => {
   }
 
   useEffect(() => {
-    API.getSavedMedia()
+    API.getSavedBooks()
       .then(({ data }) => {
         setSavedState({ ...savedState, saved: data })
       })
