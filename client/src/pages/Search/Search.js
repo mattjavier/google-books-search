@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import API from '../../utils/API'
 import BookContext from '../../utils/BookContext'
@@ -30,7 +30,7 @@ const Search = () => {
 
     API.getBooks(searchState.search)
       .then(({ data }) => {
-        setSearchState.apply({ ...searchState, books: data, search: '' })
+        setSearchState({ ...searchState, books: data, search: '' })
       })
       .catch(err => console.error(err))
   }

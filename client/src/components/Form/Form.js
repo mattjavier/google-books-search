@@ -10,6 +10,14 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
   button: {
     backgroundColor: '#3097a5'
+  },
+  input: {
+    '& .MuiFormLabel-root': {
+      color: '#3097a5'
+    },
+    '& .MuiInputBase-root:after': {
+      borderBottomColor: '#3097a5'
+    }
   }
 })
 
@@ -20,14 +28,17 @@ const Form = () => {
     handleSearchAPI
   } = useContext(BookContext)
 
+  const classes = useStyles()
+
   return (
     <form onSubmit={handleSearchAPI}>
       <TextField
         label="Search"
-        variant="filled-basic"
+        variant="filled"
         name="search"
         value={search}
         onChange={handleInputChange}
+        className={classes.input}
       />
       <p>
         <Button

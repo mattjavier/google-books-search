@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   }
 })
 
-const SavedBook = props => {
+const SearchedBook = props => {
   const classes = useStyles()
 
   return (
@@ -47,8 +47,8 @@ const SavedBook = props => {
         <Button
           size="small"
           className={classes.button}
-          onClick={() => props.handleDeleteSaved(props.book._id)}>
-            Delete
+          onClick={() => props.handleSaveBook(props.book.bookID)}>
+            Save
         </Button>
         <a href={props.book.link} target="_blank" rel="noopener noreferrer" className={classes.button}>
           <Button
@@ -63,4 +63,4 @@ const SavedBook = props => {
   )
 }
 
-export default SavedBook
+export default SearchedBook
