@@ -30,6 +30,7 @@ const Search = () => {
 
     API.getBooks(searchState.search)
       .then(({ data }) => {
+        console.log(data)
         setSearchState({ ...searchState, books: data, search: '' })
       })
       .catch(err => console.error(err))

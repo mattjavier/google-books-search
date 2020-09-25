@@ -14,7 +14,8 @@ const useStyles = makeStyles({
     marginBottom: 10
   },
   image: {
-    height: 140,
+    width: 200,
+    margin: 10
   },
   button: {
     color: '#3097a5',
@@ -27,17 +28,25 @@ const SavedBook = props => {
 
   return (
     <Card className={classes.root}>
-      <CardMedia
-        className={classes.image}
-        image={props.book.image}
-        title={props.book.title}
-      />
+      {
+        props.book.image.length > 0 ? (
+          <img 
+            src={props.book.image} 
+            alt={props.book.title}
+            className={classes.image} 
+          />
+        ) : (
+          <Typography gutterBottom variant="h5" component="h2">
+            No Image Available
+          </Typography>
+        )
+      }
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {props.book.title}
         </Typography>
         <Typography gutterBottom variant="h6">
-          Written By: {props.book.authors}
+          Written By: {props.book.authors.join(', ')}
         </Typography>
         <Typography gutterBottom variant="caption">
           Type: {props.book.description}
