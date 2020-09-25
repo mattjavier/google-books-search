@@ -9,11 +9,12 @@ router.get('/gbs/:search', (req, res) => {
       description: book.volumeInfo.description,
       image: book.volumeInfo.imageLinks.thumbnail,
       link: book.volumeInfo.infoLink,
-      title: book.volumeInfo.title
+      title: book.volumeInfo.title,
+      bookID: book.id
     })))
     .then(apiBooks => Book.find()
       .then(book => apiBooks.filter(data => 
-        book.every(dbData => dbData._id !== data._id)))
+        book.every(dbData => dbData.bookID !== data.bookID)))
         )
     .then(book => res.json(book))
     .catch(err => console.log(err))

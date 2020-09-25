@@ -1,8 +1,21 @@
 import React from 'react'
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import Search from './pages/Search'
+import Saved from './pages/Saved'
+import Navbar from './components/Navbar'
+
 const App = () => {
   return (
-    <h1>f</h1>
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Search} />
+          <Route path="/saved" component={Saved} />
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
