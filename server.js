@@ -19,5 +19,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 require('./db')
-  .then(() => app.listen(process.env.PORT || 3001))
+  .then(() => {
+    app.listen(process.env.PORT || 3001)
+    console.log('Server Connected!')
+  })
   .catch(err => console.log(err))
